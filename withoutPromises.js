@@ -32,6 +32,7 @@ function getFavVideo(videos, callback) {
 
 // This is something what we call a callback hell!
 // Async codes usually work with callbacks to maintain their behaviour (our behavious)
+// Sometimes this code gets difficult to read and manage, so we have to find a solution for it
 // To explain everything in brief
 // --> Every async function gets executed after a time period
 // --> To have our own desired output, or sequence we need to write functions such that they take callback functions
