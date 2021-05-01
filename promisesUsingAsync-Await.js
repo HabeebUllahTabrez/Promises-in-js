@@ -13,7 +13,7 @@ function getRandomNumberBetween(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-// These promise functions remain the same, cut the way we are going to implement these will change
+// These promise functions remain the same, but the way we are going to implement these will change
 function loginUser(email, password) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
