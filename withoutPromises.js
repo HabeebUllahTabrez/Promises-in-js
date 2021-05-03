@@ -7,7 +7,7 @@ function getRandomNumberBetween(min, max) {
 
 // Sone asynchronous functions, which means they have to wait until the response is received
 // Since setTimeout is asynchronous, these funtions dont really get executed right away but gets handled by the browser
-// The enent loop places them in the call stack after they have completed their waiting time which means they are partially skipped and the javascript engine proceeds executing other lines instead of waiting for these to complete
+// The event loop places them in the call stack after they have completed their waiting time which means they are partially skipped and the javascript engine proceeds executing other lines instead of waiting for these to complete
 
 function getUserDetails(email, password, callback) {
     setTimeout(() => {
@@ -18,7 +18,7 @@ function getUserDetails(email, password, callback) {
 
 function getVideoDetails(Userdetails, callback) {
     setTimeout(() => {
-        if (Userdetails.email === "charmander@goomail.com") {
+        if (Userdetails.email === "psyduck@goomail.com") {
             callback(["video1", "video2", "video3", "video4"]);
         }
     }, 2000);
@@ -38,7 +38,7 @@ function getFavVideo(videos, callback) {
 // --> To have our own desired output, or sequence we need to write functions such that they take callback functions
 // --> Callback functions get executed by the function for us
 // --> To maintain the sequence, we must do this heavy nesting which is usually not readable
-getUserDetails("charmander@goomail.com", 12345678969, (details) => {
+getUserDetails("psyduck@goomail.com", 12345678969, (details) => {
     console.log(details);
     getVideoDetails(details, (videos) => {
         let text = "";
