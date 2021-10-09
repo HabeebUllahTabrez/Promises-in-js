@@ -20,10 +20,11 @@ function loginUser(email, password) {
         setTimeout(() => {
             if (email !== "charmander@goomail.com") {
                 reject(
-                    new Error("Error: You cannot access the data of another user!")
+                    new Error("Error: The email address you entered is already in use!")
                 );
             } else if (password !== 12345678969) {
-                reject(new Error("Error: Did you forget your password?"));
+                //Throwing an error stating that password is wrong is never recommended to avoid any hacker from knowing that the email he has is correct.
+                reject(new Error("Error: Looks like either the email address or the password you entered is wrong. Please try again"));
             } else {
                 console.log("The details of the user are:");
                 resolve({ email, data: "This user watches coding tutorials" });
@@ -84,7 +85,7 @@ loginUser(USER_EMAIL, USER_PASSWORD)
 // ------------------------------------------------------------------------------------------------
 // Do you not think this a cleaner way of doing it?
 
-// The reason why this line executes before the overall logic of the code is because the code isnt working synchronously
+// The reason why this line executes before the overall logic of the code is because the code is being executed synchronously by the event loop.
 console.log(
     "This is the last line of my code, But this doesn't get executed in the end!"
 );
